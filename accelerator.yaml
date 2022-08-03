@@ -70,8 +70,7 @@ accelerator:
 
   - name: postgresServiceType
     label: Set the service type for accessibility
-    inputType: text
-    dataType: select
+    inputType: select
     choices:
       - value: ClusterIP
         text: ClusterIP
