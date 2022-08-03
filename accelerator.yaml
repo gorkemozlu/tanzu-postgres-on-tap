@@ -28,8 +28,6 @@ accelerator:
 
   - name: postgresVersion
     label: Choose postgres version
-    dependsOn:
-      name: addPostgresServiceClaim
     inputType: select
     defaultValue: postgres-14
     choices:
@@ -43,47 +41,35 @@ accelerator:
   - name: postgresName
     label: Set postgres name
     description: Give a deployment name for postgres
-    dependsOn:
-      name: addPostgresServiceClaim
     inputType: text
     dataType: string
     defaultValue: postgres
 
   - name: postgresStorageClassName
     label: Set the Storage Class name
-    dependsOn:
-      name: addPostgresServiceClaim
     inputType: text
     dataType: string
     defaultValue: standard
   - name: postgresStorageSize
     label: Set the Storage Size
-    dependsOn:
-      name: addPostgresServiceClaim
     inputType: text
     dataType: string
     defaultValue: 800M
 
   - name: postgresDBName
     label: Set the Database name
-    dependsOn:
-      name: addPostgresServiceClaim
     inputType: text
     dataType: string
     defaultValue: tanzubank
 
   - name: postgresUserName
     label: Set the User name
-    dependsOn:
-      name: addPostgresServiceClaim
     inputType: text
     dataType: string
     defaultValue: tanzubank
 
   - name: postgresServiceType
     label: Set the service type for accessibility
-    dependsOn:
-      name: addPostgresServiceClaim
     inputType: text
     dataType: select
     choices:
@@ -95,8 +81,6 @@ accelerator:
 
   - name: postgresHaMode
     label: Set the High Availability
-    dependsOn:
-      name: addPostgresServiceClaim
     inputType: toggle
     display: true
     dataType: boolean
