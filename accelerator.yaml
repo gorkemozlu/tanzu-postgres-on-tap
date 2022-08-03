@@ -84,3 +84,12 @@ accelerator:
     display: true
     dataType: boolean
     defaultValue: false
+engine:
+  let:
+    - name: emptyVar
+      expression: "''"
+  merge:
+    - includes: ["config/**"]
+      excludes: [ "accelerator.yaml","accelerator-deploy.yaml" ]
+      chain:
+        - type: YTT
