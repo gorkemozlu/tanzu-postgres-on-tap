@@ -66,7 +66,7 @@ accelerator:
     label: Set the User name
     inputType: text
     dataType: string
-    defaultValue: tanzubank
+    defaultValue: pgadmin
 
   - name: postgresServiceType
     label: Set the service type for accessibility
