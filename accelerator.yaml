@@ -1,7 +1,7 @@
 accelerator:
   displayName: Tanzu PostgreSQL
   description: Accelerator to create Tanzu PostgreSQL on k8s
-  iconUrl: https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/1280px-Node.js_logo.svg.png
+  iconUrl: https://tanzu.vmware.com/developer/images/icons/icon-tanzu-sql.svg
   tags:
   - data-service
   - postgresql

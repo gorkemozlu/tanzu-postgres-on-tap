@@ -7,7 +7,7 @@ spec:
   description: Tanzu PostgreSQL
     
     
-  iconUrl: https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Spring_Framework_Logo_2018.svg/800px-Spring_Framework_Logo_2018.svg.png
+  iconUrl: https://tanzu.vmware.com/developer/images/icons/icon-tanzu-sql.svg
   tags:
     - data-service
     - postgresql
