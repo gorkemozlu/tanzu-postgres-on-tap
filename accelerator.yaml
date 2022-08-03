@@ -60,7 +60,7 @@ accelerator:
     label: Set the Database name
     inputType: text
     dataType: string
-    defaultValue: tanzubank
+    defaultValue: sample-db-name
 
   - name: postgresUserName
     label: Set the User name
