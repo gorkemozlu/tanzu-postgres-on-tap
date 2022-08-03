@@ -1,0 +1,22 @@
+#@ load("@ytt:data", "data")
+---
+apiVersion: sql.tanzu.vmware.com/v1
+kind: Postgres
+metadata:
+  name: #@ data.values.postgresName
+  namespace: #@ data.values.namespaceToDeploy
+spec:
+  storageClassName: #@ data.values.postgresStorageClassName
+  storageSize: #@ data.values.postgresStorageSize
+  monitorStorageClassName: #@ data.values.postgresStorageClassName
+  monitorStorageSize: 1G
+  pgConfig:
+    dbname: #@ data.values.postgresDBName
+    username: #@ data.values.postgresUserName
+  postgresVersion:
+    name: #@ data.values.postgresVersion
+  serviceType: #@ data.values.postgresServiceType
+  #@ if data.values.postgresHaMode:
+  highAvailability:
+    enabled: true
+  #@ end

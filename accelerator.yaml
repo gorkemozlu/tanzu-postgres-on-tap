@@ -1,0 +1,103 @@
+accelerator:
+  displayName: Tanzu PostgreSQL
+  description: Accelerator to create Tanzu PostgreSQL on k8s
+  iconUrl: https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/1280px-Node.js_logo.svg.png
+  tags:
+  - data-service
+  - postgresql
+
+  options:
+  - name: gitRepo
+    label: Git repo
+    inputType: text
+    required: true
+    dataType: string
+    defaultValue: https://github.com/gorkemozlu/tanzu-postgres-on-tap
+  - name: parentApp
+    label: Name of parent application (the Big A app)
+    description: Name of the parent application this component is a part of
+    inputType: text
+    dataType: string
+    defaultValue: banking-demo
+  - name: namespaceToDeploy
+    label: Namespace to deploy
+    description: Please type the namespace to deploy
+    inputType: text
+    dataType: string
+    defaultValue: dev
+
+  - name: postgresVersion
+    label: Choose postgres version
+    dependsOn:
+      name: addPostgresServiceClaim
+    inputType: select
+    defaultValue: postgres-14
+    choices:
+      - value: postgres-12
+        text: postgres-12
+      - value: postgres-13
+        text: postgres-13
+      - value: postgres-14
+        text: postgres-14
+
+  - name: postgresName
+    label: Set postgres name
+    description: Give a deployment name for postgres
+    dependsOn:
+      name: addPostgresServiceClaim
+    inputType: text
+    dataType: string
+    defaultValue: postgres
+
+  - name: postgresStorageClassName
+    label: Set the Storage Class name
+    dependsOn:
+      name: addPostgresServiceClaim
+    inputType: text
+    dataType: string
+    defaultValue: standard
+  - name: postgresStorageSize
+    label: Set the Storage Size
+    dependsOn:
+      name: addPostgresServiceClaim
+    inputType: text
+    dataType: string
+    defaultValue: 800M
+
+  - name: postgresDBName
+    label: Set the Database name
+    dependsOn:
+      name: addPostgresServiceClaim
+    inputType: text
+    dataType: string
+    defaultValue: tanzubank
+
+  - name: postgresUserName
+    label: Set the User name
+    dependsOn:
+      name: addPostgresServiceClaim
+    inputType: text
+    dataType: string
+    defaultValue: tanzubank
+
+  - name: postgresServiceType
+    label: Set the service type for accessibility
+    dependsOn:
+      name: addPostgresServiceClaim
+    inputType: text
+    dataType: select
+    choices:
+      - value: ClusterIP
+        text: ClusterIP
+      - value: LoadBalancer
+        text: LoadBalancer
+    defaultValue: ClusterIP
+
+  - name: postgresHaMode
+    label: Set the High Availability
+    dependsOn:
+      name: addPostgresServiceClaim
+    inputType: toggle
+    display: true
+    dataType: boolean
+    defaultValue: false
